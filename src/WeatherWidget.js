@@ -5,12 +5,13 @@ const getForecastWeather = require("./data/serviceForecastWeather").getForecastW
 class WeatherWidget extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      currentWeather: {}
+    };
   }
 
   componentDidMount() {
-    getCurrentWeather("Madrid").then(data => console.log(data));
-    getForecastWeather("Madrid").then(data => console.log(data));
+    getCurrentWeather("Madrid").then(currentWeather => this.setState({ currentWeather }));
   }
 
   render() {
