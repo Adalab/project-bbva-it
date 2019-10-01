@@ -1,6 +1,10 @@
 import React from "react";
-const getCurrentWeather = require("./data/serviceCurrentWeather").getCurrentWeather;
-const getForecastWeather = require("./data/serviceForecastWeather").getForecastWeather;
+import WeatherCard from "./components/WeatherCard";
+import InfoWeather from "./components/InfoWeather";
+const getCurrentWeather = require("./data/serviceCurrentWeather")
+  .getCurrentWeather;
+const getForecastWeather = require("./data/serviceForecastWeather")
+  .getForecastWeather;
 
 class WeatherWidget extends React.Component {
   constructor() {
@@ -11,11 +15,19 @@ class WeatherWidget extends React.Component {
   }
 
   componentDidMount() {
-    getCurrentWeather("Madrid").then(currentWeather => this.setState({ currentWeather }));
+    getCurrentWeather("Madrid").then(currentWeather =>
+      this.setState({ currentWeather })
+    );
   }
 
   render() {
-    return <div className="WeatherWidget"></div>;
+    const { currentWeather } = this.state;
+    return (
+      <div className="WeatherWidget">
+        <WeatherCard currentWeather={currentWeather} />
+        <InfoWeather currentWeather={currentWeather} />
+      </div>
+    );
   }
 }
 
