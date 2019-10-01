@@ -1,15 +1,11 @@
-import React from 'react';
-import './App.css';
-import getDataFromServer from './data/getDataFromServer'
+import React from "react";
+import "./App.css";
+import getCurrentWeather from "./data/Service";
 
 function App() {
-  getDataFromServer('Madrid').then(data => console.log(data))
-  getDataFromServer('Barcelona').then(data => console.log(data))
-  return (
-    <div className="App">
-      
-    </div>
-  );
+  getCurrentWeather("Madrid").then(data => console.log(data));
+  getCurrentWeather("Barcelona").then(data => console.log(data));
+  return <div className="App"></div>;
 }
 
 export default App;
