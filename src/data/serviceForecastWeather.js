@@ -22,17 +22,18 @@ const selectData = data => {
 
 const formatData = data => {
   selectData(data);
-  const convertedTemp = parseInt(data.main.temp - 273.15);
+  console.log(data);
+  //   const convertedTemp = parseInt(data.main.temp - 273.15);
   return {
-    country: data.sys.country,
-    city: data.name,
-    temp: convertedTemp,
-    max: data.main.temp_max,
-    min: data.main.temp_min,
-    humidity: data.main.humidity,
-    description: data.weather[0].description,
-    icon: data.weather[0].icon,
-    wind: data.wind.speed
+    // country: data.sys.country,
+    // city: data.name,
+    // temp: convertedTemp,
+    // max: data.main.temp_max,
+    // min: data.main.temp_min,
+    // humidity: data.main.humidity,
+    // description: data.weather[0].description,
+    // icon: data.weather[0].icon,
+    // wind: data.wind.speed
   };
 };
 

@@ -1,5 +1,5 @@
 const fakeFetch = require("../mock/mock.json");
-const formatData = require("../data/Service").formatData;
+const formatData = require("../data/serviceCurrentWeather").formatData;
 
 describe("get current weather data", () => {
   it("current weather data is not an empty object", () => {

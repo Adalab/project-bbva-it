@@ -1,5 +1,5 @@
 import React from "react";
-const getCurrentWeather = require("./data/Service").getCurrentWeather;
+const getCurrentWeather = require("./data/serviceCurrentWeather").getCurrentWeather;
 const getForecastWeather = require("./data/serviceForecastWeather").getForecastWeather;
 
 class WeatherWidget extends React.Component {
