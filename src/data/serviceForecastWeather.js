@@ -1,4 +1,4 @@
-const getCurrentWeather = city => {
+const getForecastWeather = city => {
   const getCityId = () => {
     if (city === "Madrid") {
       return "3117735";
@@ -7,14 +7,21 @@ const getCurrentWeather = city => {
     }
   };
 
-  const endpoint = `http://api.openweathermap.org/data/2.5/weather?id=${getCityId(city)}&APPID=0c63c7586eaed6d88005102690c6ec7b`;
+  const endpoint = `http://api.openweathermap.org/data/2.5/forecast?id=${getCityId(city)}&APPID=0c63c7586eaed6d88005102690c6ec7b`;
 
   return fetch(endpoint)
     .then(response => response.json())
     .then(data => formatData(data));
 };
 
+const selectData = data => {
+  const arr = data.list.slice(8, 32);
+  console.log(arr);
+  const day2 = arr.slice(0);
+};
+
 const formatData = data => {
+  selectData(data);
   const convertedTemp = parseInt(data.main.temp - 273.15);
   return {
     country: data.sys.country,
@@ -29,4 +36,4 @@ const formatData = data => {
   };
 };
 
-module.exports = { formatData, getCurrentWeather };
+module.exports = { getForecastWeather, formatData };

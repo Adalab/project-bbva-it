@@ -1,5 +1,6 @@
 import React from "react";
-const getCurrentWeather = require("./data/Service");
+const getCurrentWeather = require("./data/Service").getCurrentWeather;
+const getForecastWeather = require("./data/serviceForecastWeather").getForecastWeather;
 
 class WeatherWidget extends React.Component {
   constructor() {
@@ -9,6 +10,7 @@ class WeatherWidget extends React.Component {
 
   componentDidMount() {
     getCurrentWeather("Madrid").then(data => console.log(data));
+    getForecastWeather("Madrid").then(data => console.log(data));
   }
 
   render() {

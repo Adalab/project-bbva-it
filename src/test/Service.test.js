@@ -1,8 +1,12 @@
-const getCurrentWeather = require("../data/Service");
+const fakeFetch = require("../mock/mock.json");
+const formatData = require("../data/Service").formatData;
 
-describe("get current Weather data", () => {
-  it("returns an object", () => {
-    const result = getCurrentWeather("../mock/mock.json", "Madrid");
-    expect(typeof result).toBe("object");
+describe("get current weather data", () => {
+  it("current weather data is not an empty object", () => {
+    const func = formatData(fakeFetch);
+    const result = Object.keys(func).length;
+    console.log(func);
+    const expected = true;
+    expect(!!result).toBe(expected);
   });
 });
