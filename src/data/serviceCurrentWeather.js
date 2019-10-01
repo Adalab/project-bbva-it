@@ -13,6 +13,10 @@ const getCurrentWeather = city => {
 
   return fetch(endpoint)
     .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      return data;
+    })
     .then(data => formatData(data));
 };
 
