@@ -69,7 +69,6 @@ const days = day => {
   };
 };
 
-
 const selectData = data => {
   return data.list.slice(8, 32);
 };
@@ -79,7 +78,7 @@ const formatData = data => {
   let day2 = arr.slice(0, 8);
   let day3 = arr.slice(8, 16);
   let day4 = arr.slice(16, 24);
-  
+
   return [days(day2), days(day3), days(day4)];
 };
 

@@ -1,11 +1,6 @@
 const fakeForecastFetch = require("../mock/mockForecast.json");
-const formatData = require("../data/serviceForecastWeather").formatData;
-const selectData = require("../data/serviceForecastWeather").selectData;
-const convertTemp = require("../data/serviceForecastWeather").convertTemp;
-const getMax = require("../data/serviceForecastWeather").getMax;
-const getMin = require("../data/serviceForecastWeather").getMin;
-const getIcon = require("../data/serviceForecastWeather").getIcon;
-const getDay = require("../data/serviceForecastWeather").getDay;
+
+const {formatData, selectData, convertTemp, getMax, getMin, getIcon, getDay} = require("../data/serviceForecastWeather")
 
 describe("get forecast weather data from server", () => {
   it("returns an object", () => {
