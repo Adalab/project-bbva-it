@@ -1,5 +1,5 @@
 @import "components/citybutton";
-@import "layout/header";
+@import "components/weathe-icon";
 @import "layout/weathercard";
 @import "layout/infoweather";
 @import "variables/variables";
@@ -8,7 +8,7 @@
   background: $brand-1;
   color: $brand-2;
   padding: 20px;
-
+  font-size: 8px;
   font-family: $font-1;
 }
 

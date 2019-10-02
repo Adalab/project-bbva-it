@@ -1,4 +1,4 @@
-const fakeFetch = require("../mock/mock.json");
+const fakeFetch = require("../mock/mockCurent.json");
 const formatData = require("../data/serviceCurrentWeather").formatData;
 
 describe("get current weather data", () => {

@@ -14,15 +14,14 @@ const getCurrentWeather = city => {
   return fetch(endpoint)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       return data;
     })
     .then(data => formatData(data));
 };
 
+
 const formatData = data => {
   const convertTemp = temp => parseInt(temp - 273.15);
-
   return {
     country: data.sys.country,
     city: data.name,
@@ -31,7 +30,6 @@ const formatData = data => {
     min: convertTemp(data.main.temp_min),
     humidity: data.main.humidity,
     description: data.weather[0].description,
-    icon: data.weather[0].icon,
     wind: data.wind.speed
   };
 };

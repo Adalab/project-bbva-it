@@ -1,0 +1,14 @@
+.weather--list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 10px;
+  &-temp {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+.weather--list-li {
+  list-style: none;
+}
