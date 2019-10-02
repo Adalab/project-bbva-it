@@ -32,27 +32,27 @@ const getMin = arr => {
   return convertTemp(min);
 };
 
-const getIcon = arr => {
+const getDescription = arr => {
   const iconArr = [];
 
   for (let i = 0; i < arr.length; i++) {
-    const icon = arr[i].weather[0].icon;
+    const description = arr[i].weather[0].description;
     let count = 0;
 
     for (let f = 0; f < arr.length; f++) {
-      if (arr[f].weather[0].icon === icon) {
+      if (arr[f].weather[0].description === description) {
         count += 1;
       }
     }
 
-    let mostRepeated = { icon: icon, repeated: count };
+    let mostRepeated = { description: description, repeated: count };
 
     iconArr.push(mostRepeated);
   }
   const arr2 = iconArr.reduce((acc, curr) =>
     acc.repeated > curr.repeated ? acc : curr
   );
-  return arr2.icon
+  return arr2.description
 };
 
 const getDay = (date) => {
@@ -64,7 +64,7 @@ const days = day => {
   return { 
       max: getMax(day), 
       min: getMin(day), 
-      icon: getIcon(day),
+      description: getDescription(day),
       day: getDay(day[0].dt_txt) 
   };
 };
@@ -89,6 +89,6 @@ module.exports = {
   convertTemp,
   getMax,
   getMin,
-  getIcon,
+  getDescription,
   getDay
 };

@@ -1,6 +1,6 @@
 const fakeForecastFetch = require("../mock/mockForecast.json");
 
-const {formatData, selectData, convertTemp, getMax, getMin, getIcon, getDay} = require("../data/serviceForecastWeather")
+const {formatData, selectData, convertTemp, getMax, getMin, getDescription, getDay} = require("../data/serviceForecastWeather")
 
 describe("get forecast weather data from server", () => {
   it("returns an object", () => {
@@ -43,18 +43,18 @@ describe("get the min temperature of the day", () => {
   });
 });
 
-describe("get the icon of the day", () => {
-  it("returns the 04n icon for the second day", () => {
+describe("get the description of the day", () => {
+  it("returns the broken clouds description for the second day", () => {
     const day2 = fakeForecastFetch.list.slice(8, 16);
-    const result = getIcon(day2);
-    const expected = '04n'
+    const result = getDescription(day2);
+    const expected = 'broken clouds'
     expect(result).toBe(expected);
   });
 
-  it("returns the 01d icon for the third day", () => {
+  it("returns the clear sky description for the third day", () => {
     const day3 = fakeForecastFetch.list.slice(16, 24);
-    const result = getIcon(day3);
-    const expected = '01d'
+    const result = getDescription(day3);
+    const expected = 'clear sky'
     expect(result).toBe(expected);
   });
 
