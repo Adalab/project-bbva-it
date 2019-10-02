@@ -5,10 +5,10 @@
   background: none;
   border: 0;
   color: $brand-2;
+  opacity: 0.5;
   font-size: 22px;
   cursor: pointer;
 }
 .city--button:hover {
-  color: $brand-3;
-  opacity: 0.5;
+  opacity: 1;
 }

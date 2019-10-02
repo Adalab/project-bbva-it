@@ -2,6 +2,7 @@ import React from "react";
 import CityButton from "./CityButton";
 import InfoWeather from "./InfoWeather";
 import "../stylesheets/layout/_weathercard.scss";
+import WeatherIcon from "./WeatherIcon";
 
 const WeatherCard = props => {
   const { currentWeather, currentCity, changeCity } = props;

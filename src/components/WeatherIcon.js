@@ -64,23 +64,28 @@ const ThunderStorm = () => {
   );
 };
 
-const icons = [
-  { description: "few clouds", tag: <Cloudy/> },
-  { description: "scattered clouds", tag: <Cloudy/> },
-  { description: "broken clouds", tag: <Cloudy/> },
-  { description: "thunderstorm", tag: <ThunderStorm/> },
-  { description: "snow", tag: <Flurries/> },
-  { description: "rain", tag: <SunShower/> },
-  { description: "shower rain", tag: <Rainy/> },
-  { description: "clear sky", tag: <Sunny/> }
-];
+const icons = { 
+  '02': <Cloudy/>,
+  '03': <Cloudy/>,
+  '04': <Cloudy/>,
+  '50': <Cloudy/>,
+  '11': <ThunderStorm/>,
+  '13': <Flurries/>,
+  '10': <SunShower/>,
+  '09': <Rainy/>,
+  '01': <Sunny/>,
+};
 
-const getIcon = description => {
-  return icons.find(icon => icon.description === description).tag
+const getIcon = icon => {
+  return icons[icon]
 }
 
 const WeatherIcon = props => {
-  return getIcon(props.description)
+  return(
+    <div>
+      {getIcon(props.icon)}
+    </div>
+  )
 }
 
 export default WeatherIcon;
