@@ -1,0 +1,11 @@
+@import "components/citybutton";
+@import "layout/header";
+@import "layout/weathercard";
+@import "layout/infoweather";
+@import "variables/variables";
+.weather--widget {
+  width: 500px;
+  background: $brand-1;
+  color: $brand-2;
+  padding: 50px;
+}
