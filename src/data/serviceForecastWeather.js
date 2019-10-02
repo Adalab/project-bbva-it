@@ -32,6 +32,8 @@ const getMin = arr => {
   return convertTemp(min);
 };
 
+
+
 const getDescription = arr => {
   const iconArr = [];
 
@@ -52,6 +54,7 @@ const getDescription = arr => {
   const arr2 = iconArr.reduce((acc, curr) =>
     acc.repeated > curr.repeated ? acc : curr
   );
+  
   return arr2.description
 };
 
