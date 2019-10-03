@@ -1,5 +1,31 @@
-.main--weather-widget {
+@import "../variables/variables";
+.current__weather {
   display: flex;
-  flex-flow: row wrap;
+  padding: 10px;
+  border-bottom: 2px solid $brand-2;
+  font-size: 18px;
+}
+
+.title--city {
+  font-size: 30px;
+  color: $brand-3;
+  font-weight: 100;
+}
+
+.city--content {
+  display: flex;
   justify-content: space-between;
+}
+.line {
+  border-left: 2px solid;
+  margin-left: 8px;
+  height: 30px;
+}
+.current--temp {
+  font-size: 60px;
+  font-weight: 100;
+}
+
+.icon--content {
+  margin: 0 auto;
 }
