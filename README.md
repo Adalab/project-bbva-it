@@ -5,7 +5,7 @@ Widget del tiempo para Madrid y Barcelona
 Testing unitario sobre la funcionalidad del widget. Orientación por parte del equipo para
 la construcción de entorno y guiado para realizar los test.
 
-Test de aceptación sobre la web de BBVA IT. Se les proporcionará el entorno y una breve kata para que aprendan a definir escenarios y comprobar que funciona correctamente.
+Test de aceptación sobre la web de BBVA IT.
 
 ## Recursos
 API en la que realizar consultas https://openweathermap.org/appid. Si se aporta otra
