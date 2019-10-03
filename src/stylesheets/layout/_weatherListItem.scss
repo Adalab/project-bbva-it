@@ -14,9 +14,10 @@
     flex-flow: column wrap;
     justify-content: center;
     &-day {
-      font-size: 12px;
+      font-size: 15px;
       text-align: center;
       color: $brand-3;
+      margin-top: 0px;
     }
     &-max {
       font-size: 14px;

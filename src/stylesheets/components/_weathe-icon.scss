@@ -41,7 +41,7 @@
     -2.1875em 0.6875em 0 -0.3125em #fff, 2.0625em 0.9375em 0 -0.5625em #fff;
   opacity: 0.6;
   transform: scale(0.5) translate(6em, -3em);
-  animation: cloud 4s linear infinite;
+  animation: cloud 8s linear infinite;
 }
 .cloud:nth-child(2):after {
   background: #fff;
@@ -57,7 +57,7 @@
   background: $brand-1;
   border-radius: 50%;
   box-shadow: 0 0 0 0.375em #fff;
-  animation: spin 12s infinite linear;
+  animation: spin 25s infinite linear;
 }
 .rays {
   position: absolute;
@@ -121,7 +121,7 @@
     -0.875em 1.125em 0 -0.125em rgba(255, 255, 255, 0.2),
     -1.375em -0.125em 0 rgba(255, 255, 255, 0.2);
   transform: rotate(-28deg);
-  animation: rain 3s linear infinite;
+  animation: rain 5s linear infinite;
 }
 
 .bolt {
