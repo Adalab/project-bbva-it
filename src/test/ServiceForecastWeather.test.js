@@ -1,6 +1,6 @@
 const fakeForecastFetch = require("../mock/mockForecast.json");
 
-const {formatData, selectData, convertTemp, getMax, getMin, getDescription, getDate} = require("../data/serviceForecastWeather")
+const {formatData, selectData, convertTemp, getMax, getMin, getIcon, getWeekDay, getDay2} = require("../data/serviceForecastWeather")
 
 describe("get forecast weather data from server", () => {
   it("returns an object", () => {
@@ -9,10 +9,18 @@ describe("get forecast weather data from server", () => {
   });
 });
 
+
+
 describe("select 3 days of forecast weather data from server", () => {
+  it("get hour from complete date xx:xx:xx",()=>{
+    const date= "2019/10/03 12:00:00";
+    const result=getDay2(date);
+    const expected= "12:00:00"
+    expect(result).toBe(expected);
+  })
   it("returns an array with 24 objects", () => {
-    const result = selectData(fakeForecastFetch).length;
-    const expected = 24
+    const result = selectData(fakeForecastFetch)[0].dt_txt;
+    const expected = "2019-10-02 00:00:00"
     expect(result).toBe(expected);
   });
 });
@@ -46,24 +54,23 @@ describe("get the min temperature of the day", () => {
 describe("get the description of the day", () => {
   it("returns the broken clouds description for the second day", () => {
     const day2 = fakeForecastFetch.list.slice(8, 16);
-    const result = getDescription(day2);
-    const expected = 'broken clouds'
+    const result = getIcon(day2);
+    const expected = '04'
     expect(result).toBe(expected);
   });
 
   it("returns the clear sky description for the third day", () => {
     const day3 = fakeForecastFetch.list.slice(16, 24);
-    const result = getDescription(day3);
-    const expected = 'clear sky'
+    const result = getIcon(day3);
+    const expected = '01'
     expect(result).toBe(expected);
   });
 
   describe("format date", () => {
-    it("returns day and month", () => {
+    it("returns day of week", () => {
       const date = fakeForecastFetch.list[0].dt_txt;
-      console.log(date)
-      const result = getDate(date);
-      const expected = '01-10';
+      const result = getWeekDay(date);
+      const expected = 'Martes';
       expect(result).toBe(expected);
     });
   });
