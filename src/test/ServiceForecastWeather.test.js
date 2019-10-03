@@ -1,6 +1,6 @@
 const fakeForecastFetch = require("../mock/mockForecast.json");
 
-const {formatData, selectData, convertTemp, getMax, getMin, getDescription, getDay} = require("../data/serviceForecastWeather")
+const {formatData, selectData, convertTemp, getMax, getMin, getDescription, getDate} = require("../data/serviceForecastWeather")
 
 describe("get forecast weather data from server", () => {
   it("returns an object", () => {
@@ -62,7 +62,7 @@ describe("get the description of the day", () => {
     it("returns day and month", () => {
       const date = fakeForecastFetch.list[0].dt_txt;
       console.log(date)
-      const result = getDay(date);
+      const result = getDate(date);
       const expected = '01-10';
       expect(result).toBe(expected);
     });

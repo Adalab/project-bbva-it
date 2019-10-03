@@ -26,8 +26,13 @@ const getMax = arr => {
 };
 
 const getMin = arr => {
-  const min = arr.reduce((acc, curr) =>
-    curr.main.temp < acc.main.temp ? curr : acc
+  // console.log(arr)
+  const min = arr.reduce((acc, curr) => {
+    // console.log('acc', acc)
+    // console.log('curr', curr)
+    return curr.main.temp < acc.main.temp ? curr : acc
+    
+  }
   ).main.temp;
   return convertTemp(min);
 };
@@ -57,23 +62,36 @@ const getIcon = arr => {
   return mostRepeated
 };
 
-const getDay = (date) => {
+const getDate = (date) => {
   let day = date.split(' ')[0].split('-')[2] + '-' + date.split(' ')[0].split('-')[1];
   return day
 };
+
 
 const days = day => {
   return { 
       max: getMax(day), 
       min: getMin(day), 
       icon: getIcon(day),
-      day: getDay(day[0].dt_txt) 
+      day: getDate(day[0].dt_txt) 
   };
 };
 
 const selectData = data => {
-  return data.list.slice(8, 32);
+  const arr= data.list;
+  const index= arr.findIndex(element=> getDay2(element.dt_txt)==="00:00:00" );
+  console.log(data.list.slice(index))
+  return data.list.slice(index);
 };
+
+
+const getDay2 = (date) => {
+  let hour = date.split(' ')[1]
+  console.log(hour);
+
+  return hour
+};
+
 
 const formatData = data => {
   let arr = selectData(data);
@@ -92,5 +110,5 @@ module.exports = {
   getMax,
   getMin,
   getIcon,
-  getDay
+  getDate
 };

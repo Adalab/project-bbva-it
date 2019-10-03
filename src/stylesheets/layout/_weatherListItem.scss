@@ -3,10 +3,24 @@
   flex-flow: row wrap;
   justify-content: space-evenly;
   padding: 10px;
-  &-temp {
-    font-size: 14px;
-    text-align: center;
+  &-info {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    &-day {
+      font-size: 12px;
+      text-align: center;
+    }
+    &-max,
+    &-min {
+      display: inline;
+      font-size: 14px;
+      text-align: center;
+    }
   }
+}
+
+.weather--list-day {
 }
 
 .weather--list-li {
