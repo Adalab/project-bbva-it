@@ -8,9 +8,11 @@ const WeatherListItem = props => {
     <div className="weather--list-item">
       <WeatherIcon icon={icon} />
       <div className="weather--list-info">
-      <p className="weather--list-info-day">{day}</p>
-      <p className="weather--list-info-max">{max}º </p>
-      <p className="weather--list-info-min"> {min}º</p>
+        <p className="weather--list-info-day">{day}</p>
+        <div className="weather--list-temp">
+          <p className="weather--list-info-max">{max}º </p>
+          <p className="weather--list-info-min"> {min}º</p>
+        </div>
       </div>
     </div>
   );

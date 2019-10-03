@@ -1,8 +1,14 @@
+@import "../variables/variables";
+
 .weather--list {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
   padding: 10px;
+  &-temp {
+    display: flex;
+    justify-content: center;
+  }
   &-info {
     display: flex;
     flex-flow: column wrap;
@@ -10,17 +16,19 @@
     &-day {
       font-size: 12px;
       text-align: center;
+      color: $brand-3;
     }
-    &-max,
+    &-max {
+      font-size: 14px;
+    }
     &-min {
+      margin-left: 5px;
       display: inline;
       font-size: 14px;
       text-align: center;
+      opacity: 0.6;
     }
   }
-}
-
-.weather--list-day {
 }
 
 .weather--list-li {
