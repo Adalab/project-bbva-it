@@ -26,9 +26,12 @@ const getMax = arr => {
 };
 
 const getMin = arr => {
-  const min = arr.reduce((acc, curr) =>
-    curr.main.temp < acc.main.temp ? curr : acc
-  ).main.temp;
+  // console.log(arr)
+  const min = arr.reduce((acc, curr) => {
+    // console.log('acc', acc)
+    // console.log('curr', curr)
+    return curr.main.temp < acc.main.temp ? curr : acc;
+  }).main.temp;
   return convertTemp(min);
 };
 
@@ -49,30 +52,50 @@ const getIcon = arr => {
 
     iconArr.push(mostRepeated);
   }
-    let mostRepeated = iconArr.reduce((acc, curr) =>
+  let mostRepeated = iconArr.reduce((acc, curr) =>
     acc.repeated > curr.repeated ? acc : curr
   );
 
-  mostRepeated = mostRepeated.icon.slice(0, 2)
-  return mostRepeated
+  mostRepeated = mostRepeated.icon.slice(0, 2);
+  return mostRepeated;
 };
 
-const getDay = (date) => {
-  let day = date.split(' ')[0].split('-')[2] + '-' + date.split(' ')[0].split('-')[1];
-  return day
+const getWeekDay = date => {
+  const weekDays = [
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sábado"
+  ];
+  
+  date = new Date(date);
+  date = date.getDay();
+  return weekDays[date];
 };
 
 const days = day => {
-  return { 
-      max: getMax(day), 
-      min: getMin(day), 
-      icon: getIcon(day),
-      day: getDay(day[0].dt_txt) 
+  return {
+    max: getMax(day),
+    min: getMin(day),
+    icon: getIcon(day),
+    day: getWeekDay(day[0].dt_txt)
   };
 };
 
 const selectData = data => {
-  return data.list.slice(8, 32);
+  const arr = data.list;
+  const index = arr.findIndex(
+    element => getDay2(element.dt_txt) === "00:00:00"
+  );
+  return data.list.slice(index);
+};
+
+const getDay2 = date => {
+  let hour = date.split(" ")[1];
+  return hour;
 };
 
 const formatData = data => {
@@ -92,5 +115,6 @@ module.exports = {
   getMax,
   getMin,
   getIcon,
-  getDay
+  getWeekDay,
+  getDay2
 };

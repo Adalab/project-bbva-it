@@ -22,7 +22,8 @@ const WeatherCard = props => {
         <p className="current--day">Hoy</p>
         <InfoWeather currentWeather={currentWeather} />
       </div>
-      <div className="icon--content">
+      <WeatherIcon icon={currentWeather.icon}/>
+      {/* <div className="icon--content">
         <div class="icon sun-shower">
           <div class="cloud"></div>
           <div class="sun">
@@ -30,7 +31,7 @@ const WeatherCard = props => {
           </div>
           <div class="rain"></div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
