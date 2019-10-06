@@ -3,6 +3,10 @@
 @import "layout/weathercard";
 @import "layout/infoweather";
 @import "variables/variables";
+body {
+  background: $brand-1;
+}
+
 .weather--widget {
   margin: auto;
   width: 500px;
