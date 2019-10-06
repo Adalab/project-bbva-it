@@ -4,6 +4,7 @@
 @import "layout/infoweather";
 @import "variables/variables";
 .weather--widget {
+  margin: auto;
   width: 500px;
   background: $brand-1;
   color: $brand-2;
